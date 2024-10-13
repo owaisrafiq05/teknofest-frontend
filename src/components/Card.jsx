@@ -10,7 +10,7 @@ const Card = ({ title, description, image, id }) => {
    
     return (
     <div class="">
-      <div class="max-w-[720px] mx-auto">
+      <div class="max-w-[720px] mx-auto pt-32">
         <div class="relative hover:rotate-3 hover:bg-teal-50 hover:rounded-3xl transition ease-in-out delay-100 hover:bg-gradient-to-l from-cyan-100 to-teal-50 flex flex-col mt-6 text-gray-700 bg-gray-200 shadow-md bg-clip-border rounded-xl w-72 ">
           <div class="relative mx-4 -mt-3 overflow-hidden text-white shadow-lg bg-clip-border rounded-xl bg-blue-gray-500 shadow-blue-gray-500/40">
             <img src={image} alt="card-image" />
