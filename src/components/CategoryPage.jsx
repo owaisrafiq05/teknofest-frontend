@@ -16,8 +16,9 @@ const CategoryPage = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white flex justify-center items-center">
-      <div className="flex flex-row gap-8 flex-wrap p-4">
+    <div className="min-h-screen bg-black text-white flex justify-center items-center flex-col pt-32">
+      <h1 className="text-5xl font-bold text-green-600">Competitions Categories</h1>
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
         {categories.length > 0 ? (
           categories.map((category) => (
             <Card
