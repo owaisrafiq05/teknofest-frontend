@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-const Card = ({ title, description, image, id }) => {
+const CompetitionCard = ({ title, description, image, id }) => {
     
     const navigate = useNavigate();
 
@@ -38,4 +38,4 @@ const Card = ({ title, description, image, id }) => {
   );
 };
 
-export default Card;
+export default CompetitionCard;

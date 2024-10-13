@@ -7,6 +7,9 @@ import FooterComponent from "./components/GlobalComponents/FooterComponent";
 import Loader from "./components/GlobalComponents/LoaderComponent"; // Import the loader
 import { useState, useEffect } from 'react';
 
+import CategoryPage from "./components/CategoryPage";
+import Competition from "./components/Competition";
+
 function App() {
   const [loading, setLoading] = useState(true);
 
@@ -33,6 +36,8 @@ function App() {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/contact-us" element={<ContactUs />} />
+                <Route path="/competitions" element={<CategoryPage/>} />
+                <Route path="/competitions/:id" element={<Competition/>} />
               </Routes>
             </div>
             <FooterComponent />
