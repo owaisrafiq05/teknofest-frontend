@@ -3,7 +3,7 @@ import Event1 from "../../assets/event1.webp"
 
 const OverView = () => {
   return (
-    <div className="bg-black">
+    <div className="bg-black md:pt-32 pt-16">
       {/* 1st hero-section */}
       <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid md:grid-cols-2 gap-4 md:gap-8 xl:gap-20 md:items-center">
