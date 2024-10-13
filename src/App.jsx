@@ -26,9 +26,9 @@ function App() {
         ) : (
           <>
             <NavBarComponent />
-            <div className="flex justify-center items-center w-[100%] mx-auto">
+            {/* <div className="flex justify-center items-center w-[100%] mx-auto">
               <Navbar2/>
-            </div>
+            </div> */}
             <div className="flex-grow">
               <Routes>
                 <Route path="/" element={<Home />} />

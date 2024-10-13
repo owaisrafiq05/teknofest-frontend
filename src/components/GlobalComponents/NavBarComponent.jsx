@@ -8,33 +8,12 @@ import logo from "../../assets/logo.webp";
 const Container = styled.div`
   position: fixed;
   z-index: 999;
-  height: 100vh; /* Full screen height to allow vertical centering */
+  padding-top: 10px;
   width: 100%; /* Ensure the navbar container takes full width */
   display: flex; /* Flexbox to align content */
   align-items: center; /* Vertically center the content */
-  @media (max-width: 640px) { /* Tailwind sm breakpoint */
-    display: none; /* Hide on small screens */
-  }
 `;
 
-const SidebarContainer = styled.div`
-  background-color: #f0f0f0; 
-  width: 4rem; 
-  border-radius: 0 30px 30px 0;
-  padding: 0; 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; /* Center the content */
-  position: relative;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); 
-  transition: width 0.5s ease;
-  height: auto; /* Ensure height fits the content dynamically */
-
-  &:hover {
-    width: 12rem; /* Expand to the same size on hover */
-  }
-`;
 
 const Logo = styled.div`
   width: 5.75rem; 
@@ -62,79 +41,60 @@ const SlickBar = styled.ul`
 `;
 
 const Item = styled(({ exact, ...props }) => <NavLink {...props} />)`
-  text-decoration: none;
-  color: black; 
-  width: 100%;
-  padding: 1rem 0; 
-  cursor: pointer;
-  display: flex;
-  justify-content: flex-start; /* Align items to the left */
-  align-items: center;
-  padding-left: 1rem; /* Add padding to the left for better spacing */
-  transition: background-color 0.3s, padding-left 0.3s ease;
-
-  &:hover {
-    background-color: rgba(0, 0, 255, 0.1); 
-    border-right: 4px solid #0b466d; 
-    padding-left: 1.5rem; /* Slightly increase padding on hover */
-  }
-
-  svg {
-    width: 1.5rem; 
-    height: auto;
-    margin-right: 0.75rem; /* Add margin to the right of the icon */
-    filter: invert(0%); 
-    transition: filter 0.3s ease;
-
-    &:hover {
-      filter: brightness(0) saturate(100%) invert(50%) sepia(100%) saturate(1000%) hue-rotate(180deg);
-    }
-  }
 `;
 
 const Text = styled.span`
-  width: 0; 
-  overflow: hidden;
-  margin-left: 0; 
-  transition: all 0.3s ease;
-  white-space: nowrap; 
-
-  ${SidebarContainer}:hover & {
-    width: 100%;
-    margin-left: 0.5rem; /* Adjust margin for smooth text reveal */
-  }
 `;
 
 const NavBarComponent = () => {
   const handleLinkClick = () => {
-    window.scrollTo(0, 0); // Scroll to top when a link is clicked
+    window.scrollTo(0, 0); 
   };
 
   return (
     <Container>
-      <SidebarContainer>
-        <Logo>
-          <img src={logo} alt="logo" />
-        </Logo>
-        <SlickBar>
-          <Item onClick={handleLinkClick} exact to="/">
-            <FontAwesomeIcon icon={faHome} />
-            <Text>Home</Text>
-          </Item>
-          <Item onClick={handleLinkClick} to="/events">
-            <FontAwesomeIcon icon={faCalendarAlt} />
-            <Text>Events</Text>
-          </Item>
-          <Item onClick={handleLinkClick} to="/our-team">
-            <FontAwesomeIcon icon={faUsers} />
-            <Text>Team</Text>
-          </Item>
-          <Item onClick={handleLinkClick} to="/contact-us">
-            <FontAwesomeIcon icon={faPhone} />
-            <Text>Contact</Text>
-          </Item>
-        </SlickBar>
-      </SidebarContainer>
+    
+<header className="sticky top-4 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full before:absolute before:inset-0 before:max-w-[66rem] before:mx-2 before:lg:mx-auto before:rounded-[26px] before:bg-neutral-800/30 before:backdrop-blur-md">
+  <nav className="relative max-w-[66rem] w-full py-2.5 ps-5 pe-2 md:flex md:items-center md:justify-between md:py-0 mx-2 lg:mx-auto">
+    <div className="flex items-center justify-between">
+    
+      <a className="flex-none rounded-md text-xl inline-block font-semibold focus:outline-none focus:opacity-80" href="../templates/agency/index.html" aria-label="Preline">
+        <img src={logo} className="w-14 h-14" alt="" />
+      </a>
+    
+
+      <div className="md:hidden">
+        <button type="button" className="hs-collapse-toggle size-8 flex justify-center items-center text-sm font-semibold rounded-full bg-neutral-800 text-white disabled:opacity-50 disabled:pointer-events-none" id="hs-navbar-floating-dark-collapse" aria-expanded="false" aria-controls="hs-navbar-floating-dark" aria-label="Toggle navigation" data-hs-collapse="#hs-navbar-floating-dark">
+          <svg className="hs-collapse-open:hidden shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="3" x2="21" y1="6" y2="6"/><line x1="3" x2="21" y1="12" y2="12"/><line x1="3" x2="21" y1="18" y2="18"/></svg>
+          <svg className="hs-collapse-open:block hidden shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+      </div>
+    </div>
+
+   
+    <div id="hs-navbar-floating-dark" className="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow md:block" aria-labelledby="hs-navbar-floating-dark-collapse">
+      <div className="flex flex-col md:flex-row md:items-center md:justify-end py-2 md:py-0 md:ps-7">
+        <Item onClick={handleLinkClick} to="/">
+            <p className="p-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 focus:outline-none focus:text-neutral-300">Home</p>
+        </Item>
+        <Item onClick={handleLinkClick} to="/about">
+            <p className="p-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 focus:outline-none focus:text-neutral-300">About Us</p>
+        </Item>
+        <Item onClick={handleLinkClick} to="/competitions">
+            <p className="p-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 focus:outline-none focus:text-neutral-300">Competitions</p>
+        </Item>
+        <Item onClick={handleLinkClick} to="/medcon">
+            <p className="p-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 focus:outline-none focus:text-neutral-300">MedCon</p>
+        </Item>
+        <Item onClick={handleLinkClick} to="/contact-us">
+            <p className="p-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 focus:outline-none focus:text-neutral-300">Contact Us</p>
+        </Item>
+      </div>
+    </div>
+
+  </nav>
+</header>
+
     </Container>
   );
 };
