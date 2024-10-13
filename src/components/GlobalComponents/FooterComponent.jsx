@@ -4,14 +4,14 @@ import { FaInstagram, FaLinkedin, FaFacebook } from "react-icons/fa";
 
 const FooterComponent = () => {
   const events = [
-    { name: "Coders Cup", link: "https://www.acmcoderscup.online/" },
-    { name: "ACM Developers Day", link: "https://www.acmdevday.com/" },
+    { name: "TeknoFest 2024", link: "https://www.teknofestpakistan.com/" },
   ];
 
   const developers = [
-    { name: "Sunny Shaban Ali", link: "https://www.linkedin.com/in/sunnyallana/" },
+    { name: "Sameer Ahmed", link: "https://www.linkedin.com/in/sameer-vers3/" },
     { name: "Owais Rafiq", link: "https://www.linkedin.com/in/owais-rafiq-639494253/" },
     { name: "Ali Nazir", link: "https://www.linkedin.com/in/ali-nazir-74b909275/" },
+    { name: "Muhammad Anas", link: "https://www.linkedin.com/in/muhammad-anas/" },
   ];
 
   const socialLinks = [
@@ -23,14 +23,14 @@ const FooterComponent = () => {
   const renderList = (items) =>
     items.map((item, index) => (
       <li key={index} className="mb-4">
-        <a href={item.link} className="hover:underline text-gray-600">
+        <a href={item.link} className="hover:underline text-white">
           {item.name}
         </a>
       </li>
     ));
 
   return (
-    <div className="bg-gradient-to-r from-gray-100 to-gray-200">
+    <div className="bg-black">
       <footer className="bg-repeat shadow-lg shadow-black sm:pl-20">
         <div className="mx-auto w-full p-4 py-6 lg:py-8">
           <div className="md:flex md:justify-between">
@@ -41,22 +41,22 @@ const FooterComponent = () => {
             </div>
             <div className="grid grid-cols-2 gap-5 sm:gap-6 sm:grid-cols-3 mt-9 mr-9">
               <div>
-                <h2 className="mb-6 text-lg font-bold text-[#031e2c] uppercase">Our Events</h2>
-                <ul className="text-gray-600 font-medium text-lg">
+                <h2 className="mb-6 text-lg font-bold text-white uppercase">Our Events</h2>
+                <ul className="text-white font-medium text-lg">
                   {renderList(events)}
                 </ul>
               </div>
               <div>
-                <h2 className="mb-6 text-lg font-bold text-[#031e2c] uppercase">Meet the Developers</h2>
-                <ul className="text-gray-600 font-medium text-lg">
+                <h2 className="mb-6 text-lg font-bold text-white uppercase">Meet the Developers</h2>
+                <ul className="text-white font-medium text-lg">
                   {renderList(developers)}
                 </ul>
               </div>
               <div>
-                <h2 className="text-lg font-bold text-[#031e2c] uppercase sm:ml-4">Connect with Us</h2>
+                <h2 className="text-lg font-bold text-white uppercase sm:ml-4">Connect with Us</h2>
                 <div className="flex flex-wrap mt-4 items-left justify-left">
                   {socialLinks.map((social, index) => (
-                    <a key={index} href={social.link} className="text-[#031e2c] mx-1 lg:mx-4 text-xl sm:text-2xl hover:text-gray-600 transition-colors">
+                    <a key={index} href={social.link} className="text-white mx-1 lg:mx-4 text-xl sm:text-2xl hover:text-gray-100 transition-colors">
                       {social.name}
                     </a>
                   ))}
@@ -65,7 +65,7 @@ const FooterComponent = () => {
             </div>
           </div>
           <div className="border border-gray-300 h-0.5 mt-8 mb-3"></div>
-          <h2 className="text-sm text-center text-gray-600">
+          <h2 className="text-sm text-center text-white">
             © {new Date().getFullYear()}{" "}
               ACM NUCES™
             . All Rights Reserved.
