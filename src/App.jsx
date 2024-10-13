@@ -9,11 +9,7 @@ import { useState, useEffect } from 'react';
 
 import CategoryPage from "./components/CategoryPage";
 import Competition from "./components/Competition";
-<<<<<<< HEAD
 import Form from './components/Register'
-=======
-import CompetitionInfo from "./components/CompetitionInfo";
->>>>>>> 7f4eb853e5b703d10ac24fd83d1aa64c1b9cb04b
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -43,11 +39,7 @@ function App() {
                 <Route path="/contact-us" element={<ContactUs />} />
                 <Route path="/competitions" element={<CategoryPage/>} />
                 <Route path="/competitions/:id" element={<Competition/>} />
-<<<<<<< HEAD
                 <Route path="/register" element={<Form />} />
-=======
-                <Route path="/competitionInfo" element={<CompetitionInfo/>}/>
->>>>>>> 7f4eb853e5b703d10ac24fd83d1aa64c1b9cb04b
               </Routes>
             </div>
             <FooterComponent />
